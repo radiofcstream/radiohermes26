@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radio Mónaco 98.7 FM</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="monaco.png" type="image/png">
+    <link rel="shortcut icon" href="monaco.png" type="image/png">
+    <meta name="theme-color" content="#00a800">
+    <meta name="description" content="Radio Mónaco 98.7 FM — Formosa, Argentina">
+</head>
+<body>
+    <!-- Encabezado -->
+    <header class="cabecera">
+        <div class="contenedor-logo">
+            <img src="monaco.png" alt="Logo Radio Mónaco" class="logo">
+            <div class="titulos">
+                <h1>RADIO MÓNACO</h1>
+                <p class="frecuencia">98.7 FM — Formosa, Argentina</p>
+            </div>
+        </div>
+    </header>
+
+    <!-- 🆕 MENÚ DE NAVEGACIÓN -->
+    <nav class="menu-navegacion">
+        <a href="#inicio" class="enlace-menu">INICIO</a>
+        <a href="#noticias" class="enlace-menu">NOTICIAS</a>
+        <a href="#escuchanos" class="enlace-menu">ESCUCHÁNOS</a>
+    </nav>
+
+    <!-- Portada -->
+    <section class="seccion-portada" id="inicio">
+        <img src="portada.png" alt="Portada Radio Mónaco" class="imagen-portada">
+    </section>
+
+    <!-- Reproductor en Vivo -->
+    <section class="seccion-reproductor" id="escuchanos">
+        <h2>🎙️ ESCÚCHANOS EN VIVO</h2>
+        <div class="reproductor-caja">
+            <div class="reproductor-visual">
+                <div class="onda verde"></div>
+                <div class="onda verde"></div>
+                <div class="onda verde"></div>
+                <div class="onda verde"></div>
+                <div class="onda verde"></div>
+            </div>
+            <p class="estado-transmision">🔴 EN VIVO</p>
+                                   <audio id="audioPlayer" controls preload="none">
+                <source src="/.netlify/functions/stream-proxy" type="audio/mpeg">
+                Tu navegador no soporta reproducción de audio.
+            
+
+            
+            <div class="controles-reproductor">
+                <button id="btnPlayPause" class="boton-principal">▶️ Reproducir</button>
+                <button id="btnStop" class="boton-cerrar">⏹️ Detener</button>
+            </div>
+        </div>
+        <button id="instalarApp" class="boton-instalar">📲 Instalar App en tu dispositivo</button>
+    </section>
+
+    <!-- Noticias RCC desde RSS -->
+    <section class="seccion-noticias" id="noticias">
+        <h2>📰 NOTICIAS RCC</h2>
+        <div id="contenedor-noticias-rss" class="grilla-noticias">
+            <p class="mensaje-vacio">Cargando noticias...</p>
+        </div>
+    </section>
+
+        <!-- 📰 TUS NOTICIAS — LAS QUE SUBIS VOS -->
+    <section class="seccion-noticias">
+        <h2>📰 NUESTRAS NOTICIAS</h2>
+        <div id="contenedor-noticias" class="grilla-noticias">
+            <p class="mensaje-vacio">No hay noticias publicadas aún.</p>
+        </div>
+    </section>
+
+
+    <!-- Programación -->
+    <section class="seccion-programacion">
+        <h2>📅 NUESTRA PROGRAMACIÓN</h2>
+        <div id="contenedor-programacion" class="grilla-programacion">
+            <p class="mensaje-vacio">No hay programas publicados aún.</p>
+        </div>
+    </section>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>© 2026 Radio Mónaco 98.7 FM — Formosa, Argentina</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

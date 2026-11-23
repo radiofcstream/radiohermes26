@@ -1,0 +1,17 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "/stream-proxy/*"
+  to = "http://88.150.230.110:29986/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Access-Control-Allow-Origin = "*"
+    Access-Control-Allow-Methods = "GET, HEAD, OPTIONS"
+    Access-Control-Allow-Headers = "Origin, Content-Type, Accept"
+    X-Content-Type-Options = "nosniff"
+    Content-Security-Policy = "upgrade-insecure-requests"

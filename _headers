@@ -1,0 +1,9 @@
+/*
+  Access-Control-Allow-Origin: *
+  Access-Control-Allow-Methods: GET, HEAD, OPTIONS
+  Access-Control-Allow-Headers: Origin, Content-Type, Accept
+  X-Content-Type-Options: nosniff
+
+/stream-proxy/*
+  Access-Control-Allow-Origin: *
+  Cache-Control: no-cache

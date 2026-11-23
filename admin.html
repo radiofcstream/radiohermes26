@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administrador — Radio Mónaco</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="monaco.png" type="image/png">
+    <link rel="shortcut icon" href="logo.png" type="image/png">
+</head>
+<body class="pagina-admin">
+    <div id="caja-login" class="caja-centrada">
+        <h2>🔐 Acceso Administrador</h2>
+        <input type="password" id="campo-contraseña" placeholder="Ingresar contraseña">
+        <br><br>
+        <button onclick="verificarContraseña()" class="boton-principal">Ingresar</button>
+        <p id="mensaje-error" class="texto-error"></p>
+    </div>
+
+    <div id="panel-admin" class="contenedor-admin" style="display: none;">
+        <h1>⚙️ Panel de Administración</h1>
+        <button onclick="cerrarSesion()" class="boton-cerrar">🚪 Cerrar sesión</button>
+        <hr>
+
+        <!-- 📰 PUBLICAR NOTICIA CON FOTO DESDE PC -->
+        <div class="bloque-formulario">
+            <h3>📰 Publicar Nueva Noticia</h3>
+            <input type="text" id="noticia-titulo" placeholder="Título de la noticia">
+            <textarea id="noticia-detalle" rows="4" placeholder="Detalles de la noticia..."></textarea>
+            
+            <label class="etiqueta-archivo">📷 Seleccionar foto:</label>
+            <input type="file" id="noticia-archivo" accept="image/*" onchange="vistaPreviaNoticia(event)">
+            <div id="vista-previa-noticia" class="caja-vista-previa" style="display: none;">
+                <p>Vista previa:</p>
+                <img id="img-previa-noticia" src="" alt="Vista previa">
+            </div>
+            
+            <button onclick="agregarNoticia()" class="boton-principal">✅ Guardar Noticia</button>
+        </div>
+
+        <hr>
+
+        <!-- 📅 AGREGAR PROGRAMA CON FOTO DESDE PC -->
+        <div class="bloque-formulario">
+            <h3>📅 Agregar Programa</h3>
+            <input type="text" id="programa-titulo" placeholder="Nombre del programa">
+            <input type="text" id="programa-hora" placeholder="Día y Hora (ej: Lunes - 10:00 hs)">
+            
+            <label class="etiqueta-archivo">📷 Seleccionar foto del programa:</label>
+            <input type="file" id="programa-archivo" accept="image/*" onchange="vistaPreviaPrograma(event)">
+            <div id="vista-previa-programa" class="caja-vista-previa" style="display: none;">
+                <p>Vista previa:</p>
+                <img id="img-previa-programa" src="" alt="Vista previa">
+            </div>
+            
+            <button onclick="agregarPrograma()" class="boton-principal">✅ Guardar Programa</button>
+        </div>
+
+        <hr>
+
+        <!-- LISTAS Y BOTONES DE ELIMINAR -->
+        <div class="bloque-listas">
+            <h3>📋 Noticias Publicadas</h3>
+            <div id="lista-noticias-admin"></div>
+
+            <h3>📋 Programación Publicada</h3>
+            <div id="lista-programacion-admin"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
